@@ -72,7 +72,7 @@ export function HeaderMain() {
 
           <div className="hidden xl:flex items-center min-w-[250px] justify-end">
             <div className="flex items-center gap-2">
-              <span className="text-base text-muted-foreground whitespace-nowrap">Call Us</span>
+              <Phone className="h-5 w-5 text-primary" />
               <a
                 href="tel:904.296.2020"
                 className="text-xl font-bold text-foreground hover:text-primary transition-colors whitespace-nowrap"
