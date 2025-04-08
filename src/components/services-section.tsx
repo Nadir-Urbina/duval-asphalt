@@ -74,13 +74,13 @@ export function ServicesSection() {
         >
           {services.map((service, index) => (
             <motion.div key={index} variants={item}>
-              <Card className="bg-background/50 border-border hover:border-primary/50 transition-all duration-300 h-full">
+              <Card className="bg-background/50 border-border hover:border-primary/50 hover:bg-background/60 transition-all duration-300 h-full group hover:scale-105 hover:shadow-xl hover:shadow-primary/10">
                 <CardHeader>
-                  <div className="mb-4">{service.icon}</div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:text-yellow-400">{service.icon}</div>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-muted-foreground text-base">{service.description}</CardDescription>
+                  <CardDescription className="text-muted-foreground text-base group-hover:text-foreground/80 transition-colors duration-300">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             </motion.div>

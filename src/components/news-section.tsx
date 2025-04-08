@@ -80,23 +80,23 @@ export function NewsSection() {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {newsItems.map((item) => (
-                <Card key={item.id} className="bg-background border-border overflow-hidden h-full flex flex-col">
-                  <div className="relative h-48 w-full">
-                    <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
-                    <div className="absolute top-4 left-4 bg-primary text-black text-xs font-bold py-1 px-2">
+                <Card key={item.id} className="bg-background border-border overflow-hidden h-full flex flex-col group hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute top-4 left-4 bg-primary text-black text-xs font-bold py-1 px-2 transform transition-transform duration-300 group-hover:scale-105">
                       {item.category}
                     </div>
                   </div>
                   <CardHeader className="pb-2">
-                    <CardDescription className="text-muted-foreground">{item.date}</CardDescription>
-                    <CardTitle className="text-xl line-clamp-2">{item.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground group-hover:text-muted-foreground/80 transition-colors duration-300">{item.date}</CardDescription>
+                    <CardTitle className="text-xl line-clamp-2 group-hover:text-primary transition-colors duration-300">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <p className="text-muted-foreground line-clamp-3">{item.excerpt}</p>
+                    <p className="text-muted-foreground line-clamp-3 group-hover:text-foreground/80 transition-colors duration-300">{item.excerpt}</p>
                   </CardContent>
                   <CardFooter>
-                    <Button variant="ghost" className="p-0 h-auto text-primary hover:text-primary/80">
-                      Read More <ChevronRight className="ml-1 h-4 w-4" />
+                    <Button variant="ghost" className="p-0 h-auto text-primary group-hover:translate-x-2 transition-transform duration-300">
+                      Read More <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </Button>
                   </CardFooter>
                 </Card>
