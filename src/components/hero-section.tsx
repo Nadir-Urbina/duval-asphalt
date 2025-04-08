@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 const slides = [
   {
     id: 1,
-    image: "/images/facility-aerial.jpeg",
+    image: "/images/facility-aerial.webp",
     title: "State-of-the-Art Facilities",
     subtitle: "Advanced Technology",
     description:
