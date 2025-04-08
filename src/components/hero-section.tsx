@@ -75,10 +75,14 @@ export function HeroSection() {
             <h2 className="text-2xl md:text-3xl font-medium text-primary mb-6">{slides[currentSlide].subtitle}</h2>
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl">{slides[currentSlide].description}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-primary hover:bg-primary/90 text-black font-bold text-lg px-8 py-6">
-                Buy Asphalt Online
+              <Button className="relative overflow-hidden bg-primary hover:bg-primary/90 text-black font-bold text-lg px-8 py-6 group hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
+                <span className="relative z-10">Buy Asphalt Online</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
+                <div className="absolute inset-0 -z-10">
+                  <div className="absolute inset-0 bg-primary/40 blur-md rounded-full scale-105" />
+                </div>
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white/10 text-lg px-8 py-6">
+              <Button variant="outline" className="border-white text-white hover:bg-white/10 text-lg px-8 py-6 transition-all duration-300 hover:scale-105 hover:border-primary/50">
                 Request a Quote
               </Button>
             </div>

@@ -70,19 +70,19 @@ export function HeaderMain() {
             </div>
           </nav>
 
-          <div className="hidden xl:flex items-center min-w-[250px] justify-end">
+          <div className="hidden lg:flex xl:flex items-center justify-end">
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5 text-primary" />
               <a
                 href="tel:904.296.2020"
-                className="text-xl font-bold text-foreground hover:text-primary transition-colors whitespace-nowrap"
+                className="text-lg xl:text-xl font-bold text-foreground hover:text-primary transition-colors whitespace-nowrap"
               >
                 904.296.2020
               </a>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 xl:hidden">
+          <div className="flex items-center gap-4 lg:hidden">
             <a
               href="tel:904.296.2020"
               className="p-2.5 rounded-full bg-background/10 hover:bg-background/20 transition-colors"
