@@ -55,18 +55,32 @@ type Message = {
 export function AsphaltBot() {
   const [isOpen, setIsOpen] = useState(false)
   const [isMinimized, setIsMinimized] = useState(false)
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      content: 'Hello! I\'m the Duval Asphalt Assistant. How can I help you with your asphalt questions today?',
-      sender: 'bot',
-      timestamp: new Date()
-    }
-  ])
+  const [messages, setMessages] = useState<Message[]>([])
   const [inputValue, setInputValue] = useState('')
   const [isTyping, setIsTyping] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  // Effect to open the bot and show greeting message after a short delay
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOpen(true)
+      setIsTyping(true)
+      
+      // Add initial greeting after a short typing delay
+      setTimeout(() => {
+        setMessages([{
+          id: '1',
+          content: 'Hello! 👋 I\'m the Duval Asphalt Assistant. I\'m here to help you with any questions about our asphalt services. Feel free to ask me anything!',
+          sender: 'bot',
+          timestamp: new Date()
+        }])
+        setIsTyping(false)
+      }, 1000)
+    }, 1500) // Delay before opening the bot
+
+    return () => clearTimeout(timer)
+  }, [])
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
